@@ -1,0 +1,192 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: rgb(153, 169, 143);
+}
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 260px;
+  background: #FFFFFF;
+  padding: 15px;
+  z-index: 99;
+}
+.logo {
+  width: 80px;
+  height: 60px;
+}
+.sidebar a {
+  color: black;
+  text-decoration: none;
+}
+.menu-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 40px;
+  overflow-y: scroll;
+}
+.menu-content::-webkit-scrollbar {
+  display: none;
+}
+.menu-items {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.submenu-active .menu-items {
+  transform: translateX(-56%);
+}
+.menu-title {
+  color: black;
+  font-size: 20px;
+  padding: 15px 20px;
+}
+.item a,
+.submenu-item {
+  padding: 16px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 12px;
+}
+.item i {
+  font-size: 12px;
+}
+.item a:hover,
+.submenu-item:hover,
+.submenu .menu-title:hover {
+  background: #B8B9BB;
+  box-shadow: 0px 4px 4px #303030;
+}
+
+.item a:active,
+.submenu-item:active,
+.submenu .menu-title:active {
+  box-shadow: 0px 2px 2px #131313;
+  transform: translateY(5px);
+}
+.submenu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+.submenu {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: calc(-100% - 26px);
+  height: calc(100% + 100vh);
+  background: #99A98F;
+  display: none;
+}
+.show-submenu ~ .submenu {
+  display: block;
+}
+.submenu .menu-title {
+  border-radius: 12px;
+  cursor: pointer;
+}
+.submenu .menu-title i {
+  margin-right: 10px;
+}
+.navbar,
+.main {
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+  z-index: 1000;
+  
+}
+.sidebar.close ~ .navbar,
+.sidebar.close ~ .main {
+  left: 0;
+  width: 100%;
+}
+.navbar {
+  position: fixed;
+  color: black;
+  padding: 15px 20px;
+  font-size: 25px;
+  background: #F9FAFB;
+  display: flex;
+  align-items: center;
+}
+.navbar .sidebar-close {
+  cursor: pointer;
+  font-size: 25px;
+  position: relative;
+}
+
+
+.navbar h3{
+  font-size: 25px;
+  align-self: center;
+  margin-left: 5%;
+}
+
+
+.main {
+  padding-top: 70px;
+  position: relative;
+  display: flex;
+  z-index: 100;
+}
+
+
+
+/*-----------------------------------------------------------------   */
+
+
+
+/*---------------animation----------------*/
+
+@keyframes rotateButton {
+  100% {transform: rotate(360deg);}
+}
+
+/*-----------------table--------------------------*/
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .property {
+    width: 48%;
+    padding: 20px;
+    border: 3px solid #374334;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
+
+  .button {
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 3px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 2px -1px 0px;
+    cursor: pointer;
+  }
+
+  .button1 {
+    background-color: #5d9580;
+} 

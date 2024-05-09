@@ -1,0 +1,359 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: rgb(153, 169, 143);
+}
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 260px;
+  background: #99A98F;
+  padding: 15px;
+  z-index: 99;
+}
+.logo {
+  width: 80px;
+  height: 60px;
+}
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+}
+.menu-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 40px;
+  overflow-y: scroll;
+}
+.menu-content::-webkit-scrollbar {
+  display: none;
+}
+.menu-items {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.submenu-active .menu-items {
+  transform: translateX(-56%);
+}
+.menu-title {
+  color: #fff;
+  font-size: 20px;
+  padding: 15px 20px;
+}
+.item a,
+.submenu-item {
+  padding: 16px;
+  display: inline-block;
+  width: 100%;
+  border-radius: 12px;
+}
+.item i {
+  font-size: 12px;
+}
+.item a:hover,
+.submenu-item:hover,
+.submenu .menu-title:hover {
+  background: #60695a;
+  box-shadow: 0px 4px 4px #303030;
+}
+
+.item a:active,
+.submenu-item:active,
+.submenu .menu-title:active {
+  box-shadow: 0px 2px 2px #131313;
+  transform: translateY(5px);
+}
+.submenu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+.submenu {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: calc(-100% - 26px);
+  height: calc(100% + 100vh);
+  background: #99A98F;
+  display: none;
+}
+.show-submenu ~ .submenu {
+  display: block;
+}
+.submenu .menu-title {
+  border-radius: 12px;
+  cursor: pointer;
+}
+.submenu .menu-title i {
+  margin-right: 10px;
+}
+.navbar,
+.main {
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+.sidebar.close ~ .navbar,
+.sidebar.close ~ .main {
+  left: 0;
+  width: 100%;
+}
+.navbar {
+  position: fixed;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 25px;
+  background: #C1D0B5;
+  display: flex;
+  align-items: center;
+}
+.navbar .sidebar-close {
+  cursor: pointer;
+  font-size: 25px;
+  position: relative;
+}
+
+
+.navbar h3{
+  font-size: 25px;
+  align-self: center;
+  margin-left: 5%;
+}
+
+.navbar #switchbutton{
+  border-radius: 15px;
+  display: flex;
+  box-shadow: 0px 5px #4e4c63;
+  margin-left: 45%;
+}
+
+#switchbutton label{
+  cursor: pointer;
+  padding: 0px;
+  padding: 0px 10px;
+  background-color: #ffffff;
+  color: black;
+}
+
+#switchbutton label:active{
+  transform: translateY(3px);
+  background-color: rgb(153, 169, 143);
+}
+
+#switchbutton label:nth-of-type(1){
+  border-radius: 15px 0px 0px 15px;
+  padding-right: 20px;
+}
+
+#switchbutton label:nth-of-type(3){
+  border-radius: 0px 15px 15px 0px;
+  padding-left: 20px;
+}
+
+#switchbutton input[type="radio"]:checked + label{
+  background-color: rgb(153, 169, 143);
+}
+
+
+
+#switchbutton input[type="radio"]{
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+  z-index: 100;
+  background: #D6E8DB;
+}
+.main h1 {
+  color: #11101d;
+  font-size: 40px;
+  text-align: center;
+}
+
+/*-----------------------------------------------------------------   */
+
+
+.wrapper{
+  position: relative;
+  max-width: 1130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 85px;
+  gap: 10px;
+}
+
+
+.wrapper .card{
+  position: relative;
+  background: #EEEEEE;
+  border-radius: 10px;
+  width: calc(33% - 13px);
+  overflow: hidden;
+  box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.15);
+}
+.wrapper .card img{
+  width: 100%;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  
+}
+
+.card:hover{
+  cursor: pointer;
+  box-shadow: 4px 4px 10px 0px rgb(153, 169, 143);
+}
+.card:active{
+  box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.15);
+}
+.card:hover img{
+  transform: scale(1.1);
+}
+.wrapper .card .content{
+  position: absolute;
+  width: 100%;
+  bottom: -50%;
+  background: #EEEEEE;
+  padding: 10px 20px 22px 20px;
+  box-shadow: 0px -3px 10px 0px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+.wrapper .card:hover .content{
+  bottom: 0;
+}
+.card .content .row,
+.content .buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.content .row .details span{
+  font-size: 22px;
+  font-weight: 500;
+}
+.content .row .details p{
+  color: #333;
+  font-size: 17px;
+  font-weight: 400;
+}
+.content .row .price{
+  color: #537188;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  background-color: rgb(153, 169, 143);
+  margin-top: 10px;
+  padding: 0px;
+  height: 45px;
+  width: 100%;
+}
+
+footer a{
+  text-decoration: none;
+  color: white;
+  padding: 0px 20px;
+  margin: 0px 5px;
+  
+}
+footer p{
+  text-decoration: none;
+  color: white;
+  padding: 0px 20px;
+  margin: 0px 5px;
+}
+
+footer ul{
+  list-style-type: none;
+  display: flex;
+  margin-right: 20px;
+}
+
+/*---------------animation----------------*/
+
+@keyframes rotateButton {
+  100% {transform: rotate(360deg);}
+}
+
+/*-----------------table--------------------------*/
+table tr td{
+  text-align: center;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+
+td a{
+  text-decoration: none;
+  background-color: rgb(61, 142, 212);
+  padding: 10px 15px;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+td a:hover{
+  background-color: #13212c;
+}
+td a:active{
+  background-color: rgb(61, 142, 212);
+}
+
+#promoVideo{
+  background-color: white;
+  padding: 10px 30px;
+  border-radius: 3px;
+  box-shadow: 15px 15px rgb(83, 83, 83);
+}
+#vidcontain{
+  display: flex;
+  flex-direction: column;
+  width: 640px;
+}
+
+#vidcontain a{
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+#vidcontain a:hover{
+  background-color: rgb(117, 15, 55);
+}
+
+#vidcontain a:active{
+  background-color: red;
+}
